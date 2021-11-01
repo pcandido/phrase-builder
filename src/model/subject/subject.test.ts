@@ -1,4 +1,4 @@
-import { HE, I, IT, SHE, Subject, THEY, WE, YOU } from '.'
+import { HE, I, IT, SHE, Subject, THEY, WE, YOU } from './subject'
 
 describe('GenericSubject', () => {
 
