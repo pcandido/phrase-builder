@@ -48,7 +48,10 @@ export class Verb {
     return this.value + 'ing'
   }
 
-  getPast(): string {
+  getPast(subject:Subject): string {
+    if(this.value ==='be')
+      return subject.isThirdPerson() ? 'was' : 'were'
+
     const irregular = irregularVerbs.find(verb => verb.infinitive === this.value)
     if (irregular)
       return irregular.past

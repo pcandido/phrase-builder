@@ -77,31 +77,41 @@ describe('Verb', () => {
   })
 
   describe('getPast', () => {
+    const subject = YOU
+
     it('should return past form of an irregular verb, e.g. begin -> began', () => {
-      expect(new Verb('begin').getPast()).toBe('began')
-      expect(new Verb('do').getPast()).toBe('did')
-      expect(new Verb('come').getPast()).toBe('came')
+      expect(new Verb('begin').getPast(subject)).toBe('began')
+      expect(new Verb('do').getPast(subject)).toBe('did')
+      expect(new Verb('come').getPast(subject)).toBe('came')
     })
 
     it('should add d if verb ends with e, e.g. bake -> baked', () => {
-      expect(new Verb('bake').getPast()).toBe('baked')
-      expect(new Verb('like').getPast()).toBe('liked')
-      expect(new Verb('move').getPast()).toBe('moved')
+      expect(new Verb('bake').getPast(subject)).toBe('baked')
+      expect(new Verb('like').getPast(subject)).toBe('liked')
+      expect(new Verb('move').getPast(subject)).toBe('moved')
     })
 
     it('should replace y with ied when verb ends with consonant plus y, e.g. carry -> carried', () => {
-      expect(new Verb('carry').getPast()).toBe('carried')
-      expect(new Verb('study').getPast()).toBe('studied')
+      expect(new Verb('carry').getPast(subject)).toBe('carried')
+      expect(new Verb('study').getPast(subject)).toBe('studied')
     })
 
     it('should double last letter and add ed when verb is one-sillable and ends with vowel+consonant, e.g. stop -> stopped', () => {
-      expect(new Verb('stop').getPast()).toBe('stopped')
-      expect(new Verb('plan').getPast()).toBe('planned')
+      expect(new Verb('stop').getPast(subject)).toBe('stopped')
+      expect(new Verb('plan').getPast(subject)).toBe('planned')
     })
 
     it('should add ed at final in standard cases, e.g. walk -> walked', () => {
-      expect(new Verb('walk').getPast()).toBe('walked')
-      expect(new Verb('play').getPast()).toBe('played')
+      expect(new Verb('walk').getPast(subject)).toBe('walked')
+      expect(new Verb('play').getPast(subject)).toBe('played')
+    })
+
+    it('should return were for "to be" and for non-third-person subject', () => {
+      expect(new Verb('be').getPast(YOU)).toBe('were')
+    })
+
+    it('should return was for "to be" and for third-person subject', () => {
+      expect(new Verb('be').getPast(SHE)).toBe('was')
     })
   })
 
