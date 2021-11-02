@@ -27,4 +27,29 @@ describe('VerbInput', () => {
     fireEvent.change(input, { target: { value: givenNewValue } })
     expect(onChange).toBeCalledWith(givenNewValue)
   })
+
+  describe.each([
+    ['be'],
+    ['do'],
+    ['go'],
+    ['like'],
+    ['have'],
+    ['make'],
+    ['know'],
+  ])('Shortcut button to verb "to %s"', (verb) => {
+
+    it('should be in document', () => {
+      makeSut()
+      const button = screen.getByRole('button', { name: verb })
+      expect(button).toBeInTheDocument()
+    })
+
+    it('should trigger onChange on clicked', () => {
+      const { onChange } = makeSut()
+      const button = screen.getByRole('button', { name: verb })
+      fireEvent.click(button)
+      expect(onChange).toBeCalledWith(verb)
+    })
+
+  })
 })
