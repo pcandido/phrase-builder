@@ -10,6 +10,9 @@ export class Subject {
     return true
   }
 
+  isGeneric() {
+    return false
+  }
 }
 
 class GenericSubject extends Subject {
@@ -25,6 +28,9 @@ class GenericSubject extends Subject {
     return this.thirdPerson
   }
 
+  isGeneric() {
+    return true
+  }
 }
 
 export const I = new GenericSubject('I', false)
@@ -34,3 +40,5 @@ export const SHE = new GenericSubject('she', true)
 export const IT = new GenericSubject('it', true)
 export const WE = new GenericSubject('we', false)
 export const THEY = new GenericSubject('they', false)
+
+export const GENERIC_SUBJECTS = [I, YOU, HE, SHE, IT, WE, THEY]
