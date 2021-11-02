@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { VerbInput } from './components/verb-input/VerbInput'
+import { VerbInput } from './components'
 import './App.css'
 
 export const App = () => {
