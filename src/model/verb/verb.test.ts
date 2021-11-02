@@ -50,4 +50,30 @@ describe('Verb', () => {
 
   })
 
+  describe('getContinuous', () => {
+    it('should replace last e with ing if verb ends with consonant plus e, e.g. dance -> dancing', () => {
+      expect(new Verb('dance').getContinuous()).toBe('dancing')
+      expect(new Verb('ride').getContinuous()).toBe('riding')
+      expect(new Verb('write').getContinuous()).toBe('writing')
+    })
+
+    it('should replace final ie with ying, e.g. die -> dying', () => {
+      expect(new Verb('die').getContinuous()).toBe('dying')
+      expect(new Verb('lie').getContinuous()).toBe('lying')
+      expect(new Verb('tie').getContinuous()).toBe('tying')
+    })
+
+    it('should double last letter if verb is one-sillable and ends with consonant+vowel+consonant, e.g. cut -> cutting', () => {
+      expect(new Verb('cut').getContinuous()).toBe('cutting')
+      expect(new Verb('run').getContinuous()).toBe('running')
+      expect(new Verb('stop').getContinuous()).toBe('stopping')
+    })
+
+    it('should append ing in standard cases, e.g. eat -> eating', () => {
+      expect(new Verb('eat').getContinuous()).toBe('eating')
+      expect(new Verb('go').getContinuous()).toBe('going')
+      expect(new Verb('read').getContinuous()).toBe('reading')
+    })
+  })
+
 })

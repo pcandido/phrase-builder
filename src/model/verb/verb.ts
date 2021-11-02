@@ -1,4 +1,5 @@
 import { Subject } from '..'
+import { CONSONANTS, sillableCount, VOWELS } from '../../utils/language'
 
 export class Verb {
 
@@ -29,6 +30,21 @@ export class Verb {
       return 'has'
 
     return this.value + 's'
+  }
+
+  getContinuous(): string {
+    const endsWithConsonantPlusE = new RegExp(`[${CONSONANTS.join('')}]e$`)
+    if (this.value.match(endsWithConsonantPlusE))
+      return this.value.slice(0, -1) + 'ing'
+
+    if (this.value.endsWith('ie'))
+      return this.value.slice(0, -2) + 'ying'
+
+    const endsWithConsonantVowelConsonant = new RegExp(`[${CONSONANTS.join('')}][${VOWELS.join('')}][${CONSONANTS.join('')}]$`)
+    if (sillableCount(this.value) === 1 && this.value.match(endsWithConsonantVowelConsonant))
+      return this.value + this.value.slice(-1) + 'ing'
+
+    return this.value + 'ing'
   }
 
 }
