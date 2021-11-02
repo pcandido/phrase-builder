@@ -6,9 +6,15 @@ describe('App', () => {
     
   it('should render VerbInput', () => {
       render(<App />);
-      const linkElement = screen.getByLabelText('Verb')
-      expect(linkElement).toBeInTheDocument()
+      const element = screen.getByText('Verb')
+      expect(element).toBeInTheDocument()
   })
+
+  it('should render SubjectInput', () => {
+    render(<App />);
+    const element = screen.getByText('Subject')
+    expect(element).toBeInTheDocument()
+})
 
 })
 

@@ -36,19 +36,21 @@ export const SubjectInput = (props: SubjectInputProps) => {
 
   return (
     <div>
-      {radioButtons}
-
+      <div>Subject</div>
       <div>
-        <input
-          type="radio"
-          name="subject"
-          id="radio-other"
-          value="other"
-          checked={!value.isGeneric()}
-          onChange={() => onChange(new Subject(otherSubject))}
-        />
-        <label htmlFor="radio-other">other</label>:
-        <input type="text" value={otherSubject} onChange={event => setOtherSubject(event.target.value)} />
+        {radioButtons}
+        <div>
+          <input
+            type="radio"
+            name="subject"
+            id="radio-other"
+            value="other"
+            checked={!value.isGeneric()}
+            onChange={() => onChange(new Subject(otherSubject))}
+          />
+          <label htmlFor="radio-other">other</label>:
+          <input type="text" value={otherSubject} onChange={event => setOtherSubject(event.target.value)} />
+        </div>
       </div>
     </div>
   )

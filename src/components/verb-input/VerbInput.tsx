@@ -15,9 +15,13 @@ export const VerbInput = (props: VerbInputProps) => {
 
   return (
     <div>
-      <label htmlFor="verb">Verb</label>
-      <input id="verb" value={props.value} onChange={event => props.onChange(event.target.value)}></input>
-      {commonVerbButtons}
+      <div>
+        Verb
+      </div>
+      <div>
+        <input value={props.value} onChange={event => props.onChange(event.target.value)}></input>
+        {commonVerbButtons}
+      </div>
     </div>
   )
 }
