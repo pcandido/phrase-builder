@@ -105,4 +105,33 @@ describe('Verb', () => {
     })
   })
 
+  describe('getPastParticiple', () => {
+    it('should return past form of an irregular verb, e.g. begin -> begun', () => {
+      expect(new Verb('begin').getPastParticiple()).toBe('begun')
+      expect(new Verb('do').getPastParticiple()).toBe('done')
+      expect(new Verb('come').getPastParticiple()).toBe('come')
+    })
+
+    it('should add d if verb ends with e, e.g. bake -> baked', () => {
+      expect(new Verb('bake').getPastParticiple()).toBe('baked')
+      expect(new Verb('like').getPastParticiple()).toBe('liked')
+      expect(new Verb('move').getPastParticiple()).toBe('moved')
+    })
+
+    it('should replace y with ied when verb ends with consonant plus y, e.g. carry -> carried', () => {
+      expect(new Verb('carry').getPastParticiple()).toBe('carried')
+      expect(new Verb('study').getPastParticiple()).toBe('studied')
+    })
+
+    it('should double last letter and add ed when verb is one-sillable and ends with vowel+consonant, e.g. stop -> stopped', () => {
+      expect(new Verb('stop').getPastParticiple()).toBe('stopped')
+      expect(new Verb('plan').getPastParticiple()).toBe('planned')
+    })
+
+    it('should add ed at final in standard cases, e.g. walk -> walked', () => {
+      expect(new Verb('walk').getPastParticiple()).toBe('walked')
+      expect(new Verb('play').getPastParticiple()).toBe('played')
+    })
+  })
+
 })

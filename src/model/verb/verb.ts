@@ -56,6 +56,14 @@ export class Verb {
     return this.getPastAndParticipleOfRegularVerb()
   }
 
+  getPastParticiple(): string {
+    const irregular = irregularVerbs.find(verb => verb.infinitive === this.value)
+    if (irregular)
+      return irregular.pastParticiple
+
+    return this.getPastAndParticipleOfRegularVerb()
+  }
+
   private getPastAndParticipleOfRegularVerb(): string {
     if (this.value.endsWith('e'))
       return this.value + 'd'
