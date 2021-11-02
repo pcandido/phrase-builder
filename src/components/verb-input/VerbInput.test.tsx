@@ -14,7 +14,7 @@ describe('VerbInput', () => {
 
   it('should render an input with received value', () => {
     const { value } = makeSut()
-    const input = screen.getByRole('textbox')
+    const input = screen.getByLabelText('Verb')
 
     expect(input).toBeInTheDocument()
     expect(input).toHaveValue(value)
@@ -22,7 +22,7 @@ describe('VerbInput', () => {
 
   it('should trigger onChange when input changes', () => {
     const { onChange } = makeSut()
-    const input = screen.getByRole('textbox')
+    const input = screen.getByLabelText('Verb')
     const givenNewValue = 'new-value'
     fireEvent.change(input, { target: { value: givenNewValue } })
     expect(onChange).toBeCalledWith(givenNewValue)
