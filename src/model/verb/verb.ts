@@ -1,5 +1,6 @@
 import { Subject } from '..'
 import { CONSONANTS, sillableCount, VOWELS } from '../../utils/language'
+import { toBe } from './auxiliar-verbs'
 import irregularVerbs from './irregular-verbs.json'
 
 export class Verb {
@@ -15,6 +16,9 @@ export class Verb {
   }
 
   getPresentSimple(subject: Subject): string {
+    if (this.value === 'be')
+      return toBe.present(subject)
+
     if (subject.isThirdPerson())
       return this.getPresentSimpleForThirdPerson()
     return this.value
@@ -48,9 +52,9 @@ export class Verb {
     return this.value + 'ing'
   }
 
-  getPast(subject:Subject): string {
-    if(this.value ==='be')
-      return subject.isThirdPerson() ? 'was' : 'were'
+  getPast(subject: Subject): string {
+    if (this.value === 'be')
+      return toBe.past(subject)
 
     const irregular = irregularVerbs.find(verb => verb.infinitive === this.value)
     if (irregular)

@@ -1,4 +1,4 @@
-import { SHE, YOU } from '..'
+import { I, SHE, YOU } from '..'
 import { Verb } from './verb'
 
 describe('Verb', () => {
@@ -46,6 +46,14 @@ describe('Verb', () => {
         expect(verb.getPresentSimple(subject)).toBe('has')
       })
 
+    })
+
+    describe('verb to be', () => {
+      const verb = new Verb('be')
+
+      it('should be "am" to subject "I"', () => {
+        expect(verb.getPresentSimple(I)).toBe('am')
+      })
     })
 
   })
