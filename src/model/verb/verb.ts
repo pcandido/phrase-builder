@@ -1,5 +1,6 @@
 import { Subject } from '..'
 import { CONSONANTS, sillableCount, VOWELS } from '../../utils/language'
+import irregularVerbs from './irregular-verbs.json'
 
 export class Verb {
 
@@ -45,6 +46,29 @@ export class Verb {
       return this.value + this.value.slice(-1) + 'ing'
 
     return this.value + 'ing'
+  }
+
+  getPast(): string {
+    const irregular = irregularVerbs.find(verb => verb.infinitive === this.value)
+    if (irregular)
+      return irregular.past
+
+    return this.getPastAndParticipleOfRegularVerb()
+  }
+
+  private getPastAndParticipleOfRegularVerb(): string {
+    if (this.value.endsWith('e'))
+      return this.value + 'd'
+
+    const endsWithConsonantPlusY = new RegExp(`[${CONSONANTS.join('')}]y$`)
+    if (this.value.match(endsWithConsonantPlusY))
+      return this.value.slice(0, -1) + 'ied'
+
+    const endsWithVowelPlusConsonant = new RegExp(`[${VOWELS.join('')}][${CONSONANTS.join('')}]$`)
+    if (sillableCount(this.value) === 1 && this.value.match(endsWithVowelPlusConsonant))
+      return this.value + this.value.slice(-1) + 'ed'
+
+    return this.value + 'ed'
   }
 
 }
