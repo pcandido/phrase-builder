@@ -33,11 +33,26 @@ export const ConfigInput = (props: ConfigProps) => {
     </div>
   ))
 
+  const verbTenseTimeRadios = VERB_TENSE_TIMES.map(time => (
+    <div key={time}>
+      <input
+        type="radio"
+        name="verb-tense-time"
+        id={`verb-tense-time-${time}`}
+        value={time}
+        checked={verbTenseTime === time}
+        onChange={() => setVerbTenseTime(time)}
+      />
+      <label htmlFor={`verb-tense-time-${time}`}>{time}</label>
+    </div>
+  ))
+
   return (
     <div>
       <div>Configuration</div>
       <div>
         <div>{phraseTypeRadios}</div>
+        <div>{verbTenseTimeRadios}</div>
       </div>
     </div>
   )
