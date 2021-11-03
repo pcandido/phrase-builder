@@ -47,12 +47,27 @@ export const ConfigInput = (props: ConfigProps) => {
     </div>
   ))
 
+  const verbTenseTypeRadios = VERB_TENSE_TYPES.map(type => (
+    <div key={type}>
+      <input
+        type="radio"
+        name="verb-tense-type"
+        id={`verb-tense-type-${type}`}
+        value={type}
+        checked={verbTenseType === type}
+        onChange={() => setVerbTenseType(type)}
+      />
+      <label htmlFor={`verb-tense-type-${type}`}>{type}</label>
+    </div>
+  ))
+
   return (
     <div>
       <div>Configuration</div>
       <div>
         <div>{phraseTypeRadios}</div>
         <div>{verbTenseTimeRadios}</div>
+        <div>{verbTenseTypeRadios}</div>
       </div>
     </div>
   )

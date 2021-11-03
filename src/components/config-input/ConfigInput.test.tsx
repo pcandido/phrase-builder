@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Config, PHRASE_TYPES, VERB_TENSE_TIMES } from '../../model'
+import { Config, PHRASE_TYPES, VERB_TENSE_TIMES, VERB_TENSE_TYPES } from '../../model'
 import { ConfigInput } from './ConfigInput'
 
 const makeSut = (defaults?: Partial<Config>) => {
@@ -58,4 +58,24 @@ describe('Config', () => {
     })
   })
 
+  describe.each(VERB_TENSE_TYPES)('Verb Tense Type: %s', (type: string) => {
+    it('should be rendered as a radioButton', () => {
+      makeSut()
+      const radio = screen.getByLabelText(type)
+      expect(radio).toBeInTheDocument()
+    })
+
+    it('should be selected if value indicates it', () => {
+      makeSut({ verbTenseType: type })
+      const radio = screen.getByLabelText(type)
+      expect(radio).toBeChecked()
+    })
+
+    it('should trigger onChange when clicked', () => {
+      const { onChange } = makeSut()
+      const radio = screen.getByLabelText(type)
+      radio.click()
+      expect(onChange).toBeCalledWith(expect.objectContaining({ verbTenseType: type }))
+    })
+  })
 })
