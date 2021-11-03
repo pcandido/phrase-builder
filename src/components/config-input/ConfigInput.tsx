@@ -62,9 +62,9 @@ export const ConfigInput = (props: ConfigProps) => {
   ))
 
   return (
-    <div>
-      <div>Configuration</div>
-      <div>
+    <div className="card">
+      <div className="card-title">Configuration</div>
+      <div className="card-content">
         <div>{phraseTypeRadios}</div>
         <div>{verbTenseTimeRadios}</div>
         <div>{verbTenseTypeRadios}</div>

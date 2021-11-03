@@ -6,9 +6,9 @@ export interface ComplementInputProps {
 
 export const ComplementInput = (props: ComplementInputProps) => {
   return (
-    <div>
-      <div>Complement</div>
-      <div>
+    <div className="card">
+      <div className="card-title">Complement</div>
+      <div className="card-content">
         <input type="text" value={props.value} onChange={event => props.onChange(event.target.value)} />
       </div>
     </div>

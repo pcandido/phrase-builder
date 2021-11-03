@@ -14,11 +14,9 @@ export const VerbInput = (props: VerbInputProps) => {
   ))
 
   return (
-    <div>
-      <div>
-        Verb
-      </div>
-      <div>
+    <div className="card">
+      <div className="card-title">Verb</div>
+      <div className="card-content">
         <input value={props.value} onChange={event => props.onChange(event.target.value)}></input>
         {commonVerbButtons}
       </div>

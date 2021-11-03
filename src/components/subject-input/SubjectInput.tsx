@@ -35,9 +35,9 @@ export const SubjectInput = (props: SubjectInputProps) => {
     })
 
   return (
-    <div>
-      <div>Subject</div>
-      <div>
+    <div className="card">
+      <div className="card-title">Subject</div>
+      <div className="card-content">
         {radioButtons}
         <div>
           <input
