@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import './SubjectInput.sass'
 import { GENERIC_SUBJECTS, Subject } from '../../model'
 
 export interface SubjectInputProps {
@@ -20,7 +21,7 @@ export const SubjectInput = (props: SubjectInputProps) => {
     .map(subject => {
       const subjectValue = subject.getValue()
       return (
-        <div key={subjectValue}>
+        <div className="option" key={subjectValue}>
           <input
             type="radio"
             name="subject"
@@ -35,11 +36,11 @@ export const SubjectInput = (props: SubjectInputProps) => {
     })
 
   return (
-    <div className="card">
+    <div id="subject-input" className="card">
       <div className="card-title">Subject</div>
       <div className="card-content">
         {radioButtons}
-        <div>
+        <div className="option">
           <input
             type="radio"
             name="subject"
@@ -49,7 +50,7 @@ export const SubjectInput = (props: SubjectInputProps) => {
             onChange={() => onChange(new Subject(otherSubject))}
           />
           <label htmlFor="radio-other">other</label>:
-          <input type="text" value={otherSubject} onChange={event => setOtherSubject(event.target.value)} />
+          <input id="other-input" type="text" value={otherSubject} onChange={event => setOtherSubject(event.target.value)} />
         </div>
       </div>
     </div>
