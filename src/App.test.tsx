@@ -22,5 +22,11 @@ describe('App', () => {
     expect(element).toBeInTheDocument()
   })
 
+  it('should render ConfigInput', () => {
+    render(<App />)
+    const element = screen.getByText('Configuration')
+    expect(element).toBeInTheDocument()
+  })
+
 })
 
