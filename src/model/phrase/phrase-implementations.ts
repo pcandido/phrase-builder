@@ -14,3 +14,4 @@ export * from './implementations/negative/present/simple/negative-present-simple
 export * from './implementations/negative/present/continuous/negative-present-continuous'
 export * from './implementations/negative/present/perfect/negative-present-perfect'
 export * from './implementations/negative/present/perfect-continuous/negative-present-perfect-continuous'
+export * from './implementations/negative/past/simple/negative-past-simple'
