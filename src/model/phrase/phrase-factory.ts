@@ -5,7 +5,8 @@ import { Verb } from '../verb/verb'
 import {
   AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect, AffirmativePresentPerfectContinuous,
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
-  AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous, NegativePresentSimple,
+  AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous,
+  NegativePresentSimple, NegativePresentContinuous,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -69,7 +70,7 @@ export class PhraseFactory {
   private makeNegativePresentPhrase(config: Config) {
     switch (config.verbTenseType) {
       case 'simple': return new NegativePresentSimple()
-      // case 'continuous': return new NegativePresentContinuous()
+      case 'continuous': return new NegativePresentContinuous()
       // case 'perfect': return new NegativePresentPerfect()
       // case 'perfect continuous': return new NegativePresentPerfectContinuous()
       default: return new UnimplementedPhrase()
