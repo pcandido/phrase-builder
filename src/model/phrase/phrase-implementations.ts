@@ -30,3 +30,4 @@ export * from './implementations/interrogative/past/simple/interrogative-past-si
 export * from './implementations/interrogative/past/continuous/interrogative-past-continuous'
 export * from './implementations/interrogative/past/perfect/interrogative-past-perfect'
 export * from './implementations/interrogative/past/perfect-continuous/interrogative-past-perfect-continuous'
+export * from './implementations/interrogative/future/simple/interrogative-future-simple'
