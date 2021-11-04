@@ -5,16 +5,8 @@ import { Verb } from '../verb/verb'
 import {
   AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect, AffirmativePresentPerfectContinuous,
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
-  AffirmativeFutureSimple,
+  AffirmativeFutureSimple, AffirmativeFutureContinuous,
 } from './phrase-implementations'
-
-class UnimplementedPhrase extends Phrase {
-
-  protected assembly(subject: Subject, verb: Verb, complement: string): string {
-    return 'Unimplemented phrase type'
-  }
-
-}
 
 export class PhraseFactory {
 
@@ -57,7 +49,7 @@ export class PhraseFactory {
   private makeAffirmativeFuturePhrase(config: Config) {
     switch (config.verbTenseType) {
       case 'simple': return new AffirmativeFutureSimple()
-      // case 'continuous': return new AffirmativeFutureContinuous()
+      case 'continuous': return new AffirmativeFutureContinuous()
       // case 'perfect': return new AffirmativeFuturePerfect()
       // case 'perfect continuous': return new AffirmativeFuturePerfectContinuous()
       default: return new UnimplementedPhrase()
@@ -66,4 +58,10 @@ export class PhraseFactory {
 
 }
 
+class UnimplementedPhrase extends Phrase {
 
+  protected assembly(subject: Subject, verb: Verb, complement: string): string {
+    return 'Unimplemented phrase type'
+  }
+
+}

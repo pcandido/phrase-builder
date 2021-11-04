@@ -7,3 +7,4 @@ export * from './implementations/affirmative/past/continuous/affirmative-past-co
 export * from './implementations/affirmative/past/perfect/affirmative-past-perfect'
 export * from './implementations/affirmative/past/perfect-continuous/affirmative-past-perfect-continuous'
 export * from './implementations/affirmative/future/simple/affirmative-future-simple'
+export * from './implementations/affirmative/future/continuous/affirmative-future-continuous'
