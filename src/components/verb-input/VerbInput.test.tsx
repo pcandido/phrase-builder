@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react'
+import { Verb } from '../../model'
 import { VerbInput } from './VerbInput'
 
 const makeSut = () => {
-  const value = 'any value'
+  const value = new Verb('any verb')
   const onChange = jest.fn()
 
   render(<VerbInput value={value} onChange={onChange} />)
@@ -17,7 +18,7 @@ describe('VerbInput', () => {
     const input = screen.getByRole('textbox')
 
     expect(input).toBeInTheDocument()
-    expect(input).toHaveValue(value)
+    expect(input).toHaveValue(value.getInfinitive())
   })
 
   it('should trigger onChange when input changes', () => {
@@ -25,7 +26,7 @@ describe('VerbInput', () => {
     const input = screen.getByRole('textbox')
     const givenNewValue = 'new-value'
     fireEvent.change(input, { target: { value: givenNewValue } })
-    expect(onChange).toBeCalledWith(givenNewValue)
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: givenNewValue }))
   })
 
   describe.each([
@@ -48,7 +49,7 @@ describe('VerbInput', () => {
       const { onChange } = makeSut()
       const button = screen.getByRole('button', { name: verb })
       fireEvent.click(button)
-      expect(onChange).toBeCalledWith(verb)
+      expect(onChange).toBeCalledWith(expect.objectContaining({ value: verb }))
     })
 
   })

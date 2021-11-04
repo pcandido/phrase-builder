@@ -1,16 +1,19 @@
+import { Verb } from '../../model'
 import { Card } from '../card/Card'
 import './VerbInput.sass'
 
 export interface VerbInputProps {
-  value: string
-  onChange: (value: string) => void
+  value: Verb
+  onChange: (value: Verb) => void
 }
 
 export const VerbInput = (props: VerbInputProps) => {
 
+  const onChange = (verb:string) => props.onChange(new Verb(verb))
+
   const commonVerbs = ['be', 'do', 'go', 'like', 'have', 'make', 'know']
   const commonVerbButtons = commonVerbs.map((verb, i) => (
-    <button key={i} onClick={() => props.onChange(verb)}>
+    <button key={i} onClick={() => onChange(verb)}>
       {verb}
     </button>
   ))
@@ -18,7 +21,7 @@ export const VerbInput = (props: VerbInputProps) => {
   return (
     <Card title="Verb">
       <div id="verb-input">
-        <input value={props.value} onChange={event => props.onChange(event.target.value)}></input>
+        <input value={props.value.getInfinitive()} onChange={event => onChange(event.target.value)}></input>
         <div id="common-verbs">
           {commonVerbButtons}
         </div>

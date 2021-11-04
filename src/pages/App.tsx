@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.sass'
-import { Config, I, Subject } from '../model'
+import { Config, I, Subject, Verb } from '../model'
 import { ConfigInput } from '../components/config-input/ConfigInput'
 import { ComplementInput, SubjectInput, VerbInput } from '../components'
 import { Phrase } from '../components/phrase/Phrase'
@@ -8,7 +8,7 @@ import { Phrase } from '../components/phrase/Phrase'
 export const App = () => {
 
   const [subject, setSubject] = useState<Subject>(I)
-  const [verb, setVerb] = useState('study')
+  const [verb, setVerb] = useState<Verb>(new Verb('study'))
   const [complement, setComplement] = useState('English')
   const [config, setConfig] = useState<Config>({
     phraseType: 'affirmative',
@@ -27,7 +27,7 @@ export const App = () => {
         </div>
       </div>
       <div id="result">
-        <Phrase value={`${subject.getValue()} ${verb} ${complement}`} />
+        <Phrase value={`${subject.getValue()} ${verb.getInfinitive()} ${complement}`} />
       </div>
     </div>
   )
