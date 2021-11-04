@@ -12,7 +12,7 @@ export class InterrogativePresentContinuous extends Phrase {
       subject.getValue(),
       verb.getContinuous(),
       complement,
-    ], '.')
+    ], '?')
   }
 
 }
