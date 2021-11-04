@@ -3,7 +3,7 @@ import { Phrase } from './phrase'
 import { Subject } from '../subject/subject'
 import { Verb } from '../verb/verb'
 import {
-  AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect
+  AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect, AffirmativePresentPerfectContinuous,
 } from './phrase-implementations'
 
 class UnimplementedPhrase extends Phrase {
@@ -35,6 +35,7 @@ export class PhraseFactory {
       case 'simple': return new AffirmativePresentSimple()
       case 'continuous': return new AffirmativePresentContinuous()
       case 'perfect': return new AffirmativePresentPerfect()
+      case 'perfect continuous': return new AffirmativePresentPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }

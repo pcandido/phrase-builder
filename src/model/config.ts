@@ -2,7 +2,7 @@ export const PHRASE_TYPES = [
   'affirmative',
   'negative',
   'interrogative',
-  'negative-interrogative',
+  'negative interrogative',
 ]
 
 export const VERB_TENSE_TIMES = [
