@@ -4,7 +4,7 @@ import { Subject } from '../subject/subject'
 import { Verb } from '../verb/verb'
 import {
   AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect, AffirmativePresentPerfectContinuous,
-  AffirmativePastSimple,
+  AffirmativePastSimple, AffirmativePastContinuous,
 } from './phrase-implementations'
 
 class UnimplementedPhrase extends Phrase {
@@ -45,6 +45,7 @@ export class PhraseFactory {
   private makeAffirmativePastPhrase(config: Config) {
     switch (config.verbTenseType) {
       case 'simple': return new AffirmativePastSimple()
+      case 'continuous': return new AffirmativePastContinuous()
       default: return new UnimplementedPhrase()
     }
   }
