@@ -5,7 +5,7 @@ import { Verb } from '../verb/verb'
 import {
   AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect, AffirmativePresentPerfectContinuous,
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
-  AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous,
+  AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous, NegativePresentSimple,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -13,6 +13,7 @@ export class PhraseFactory {
   make(config: Config): Phrase {
     switch (config.phraseType) {
       case 'affirmative': return this.makeAffirmativePhrase(config)
+      case 'negative': return this.makeNegativePhrase(config)
       default: return new UnimplementedPhrase()
     }
   }
@@ -22,6 +23,15 @@ export class PhraseFactory {
       case 'present': return this.makeAffirmativePresentPhrase(config)
       case 'past': return this.makeAffirmativePastPhrase(config)
       case 'future': return this.makeAffirmativeFuturePhrase(config)
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeNegativePhrase(config: Config) {
+    switch (config.verbTenseTime) {
+      case 'present': return this.makeNegativePresentPhrase(config)
+      // case 'past': return this.makeNegativePastPhrase(config)
+      // case 'future': return this.makeNegativeFuturePhrase(config)
       default: return new UnimplementedPhrase()
     }
   }
@@ -52,6 +62,16 @@ export class PhraseFactory {
       case 'continuous': return new AffirmativeFutureContinuous()
       case 'perfect': return new AffirmativeFuturePerfect()
       case 'perfect continuous': return new AffirmativeFuturePerfectContinuous()
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeNegativePresentPhrase(config: Config) {
+    switch (config.verbTenseType) {
+      case 'simple': return new NegativePresentSimple()
+      // case 'continuous': return new NegativePresentContinuous()
+      // case 'perfect': return new NegativePresentPerfect()
+      // case 'perfect continuous': return new NegativePresentPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }

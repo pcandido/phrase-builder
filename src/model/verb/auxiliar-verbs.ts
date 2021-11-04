@@ -37,3 +37,4 @@ export const toDo: AuxiliarVerb = {
 }
 
 export const will = 'will'
+export const not = 'not'

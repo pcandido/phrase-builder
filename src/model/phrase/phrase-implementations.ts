@@ -10,3 +10,4 @@ export * from './implementations/affirmative/future/simple/affirmative-future-si
 export * from './implementations/affirmative/future/continuous/affirmative-future-continuous'
 export * from './implementations/affirmative/future/perfect/affirmative-future-perfect'
 export * from './implementations/affirmative/future/perfect-continuous/affirmative-future-perfect-continuous'
+export * from './implementations/negative/present/simple/negative-present-simple'
