@@ -1,7 +1,7 @@
 import { I, SHE, THEY, Verb } from '../../../../..'
 import { AffirmativePresentPerfectContinuous } from './affirmative-present-perfect-continuous'
 
-describe('AffirmativePresentSimple', () => {
+describe('AffirmativePresentPerfectContinuous', () => {
   const study = new Verb('study')
   const english = 'English'
 

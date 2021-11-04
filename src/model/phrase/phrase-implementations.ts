@@ -2,3 +2,4 @@ export * from './implementations/affirmative/present/simple/affirmative-present-
 export * from './implementations/affirmative/present/continuous/affirmative-present-continuous'
 export * from './implementations/affirmative/present/perfect/affirmative-present-perfect'
 export * from './implementations/affirmative/present/perfect-continuous/affirmative-present-perfect-continuous'
+export * from './implementations/affirmative/past/simple/affirmative-past-simple'
