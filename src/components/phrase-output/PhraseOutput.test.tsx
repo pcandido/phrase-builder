@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import { Phrase } from './Phrase'
+import { PhraseOutput } from './PhraseOutput'
 
-describe('Phrase', () => {
+describe('PhraseOutput', () => {
 
   it('should render the given value', () => {
     const givenPhrase = 'any phrase'
-    render(<Phrase value={givenPhrase} />)
+    render(<PhraseOutput value={givenPhrase} />)
     const text = screen.getByText(givenPhrase)
     expect(text).toBeInTheDocument()
   })

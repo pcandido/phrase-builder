@@ -3,7 +3,7 @@ import './App.sass'
 import { Config, I, Subject, Verb } from '../model'
 import { ConfigInput } from '../components/config-input/ConfigInput'
 import { ComplementInput, SubjectInput, VerbInput } from '../components'
-import { Phrase } from '../components/phrase/Phrase'
+import { PhraseOutput } from '../components/phrase-output/PhraseOutput'
 
 export const App = () => {
 
@@ -27,7 +27,7 @@ export const App = () => {
         </div>
       </div>
       <div id="result">
-        <Phrase value={`${subject.getValue()} ${verb.getInfinitive()} ${complement}`} />
+        <PhraseOutput value={`${subject.getValue()} ${verb.getInfinitive()} ${complement}`} />
       </div>
     </div>
   )
