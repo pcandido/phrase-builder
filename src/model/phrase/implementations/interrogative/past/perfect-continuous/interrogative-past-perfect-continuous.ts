@@ -4,11 +4,11 @@ import { Phrase } from '../../../../phrase'
 import { merge } from '../../../../../../utils/language'
 import { toBe, toHave } from '../../../../../verb/auxiliar-verbs'
 
-export class InterrogativePresentPerfectContinuous extends Phrase {
+export class InterrogativePastPerfectContinuous extends Phrase {
 
   protected assembly(subject: Subject, verb: Verb, complement: string): string {
     return merge([
-      toHave.present(subject),
+      toHave.past(subject),
       subject.getValue(),
       toBe.pastParticiple(),
       verb.getContinuous(),

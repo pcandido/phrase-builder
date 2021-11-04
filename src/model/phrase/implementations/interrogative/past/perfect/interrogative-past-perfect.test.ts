@@ -7,16 +7,16 @@ describe('InterrogativePastPerfect', () => {
 
   it('should return "Had I studied English" for params (I, study, English)', () => {
     const phrase = new InterrogativePastPerfect().build(I, study, english)
-    expect(phrase).toBe('Had I studied English.')
+    expect(phrase).toBe('Had I studied English?')
   })
 
   it('should return "Had she studied English" for params (she, study, English)', () => {
     const phrase = new InterrogativePastPerfect().build(SHE, study, english)
-    expect(phrase).toBe('Had she studied English.')
+    expect(phrase).toBe('Had she studied English?')
   })
 
   it('should return "Had they studied English" for params (they, study, English)', () => {
     const phrase = new InterrogativePastPerfect().build(THEY, study, english)
-    expect(phrase).toBe('Had they studied English.')
+    expect(phrase).toBe('Had they studied English?')
   })
 })

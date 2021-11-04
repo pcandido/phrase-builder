@@ -12,7 +12,7 @@ export class InterrogativePastContinuous extends Phrase {
       subject.getValue(),
       verb.getContinuous(),
       complement,
-    ], '.')
+    ], '?')
   }
 
 }

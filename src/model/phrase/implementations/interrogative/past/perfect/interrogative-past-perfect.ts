@@ -12,7 +12,7 @@ export class InterrogativePastPerfect extends Phrase {
       subject.getValue(),
       verb.getPastParticiple(),
       complement,
-    ], '.')
+    ], '?')
   }
 
 }

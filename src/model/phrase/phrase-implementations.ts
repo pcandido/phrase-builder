@@ -29,3 +29,4 @@ export * from './implementations/interrogative/present/perfect-continuous/interr
 export * from './implementations/interrogative/past/simple/interrogative-past-simple'
 export * from './implementations/interrogative/past/continuous/interrogative-past-continuous'
 export * from './implementations/interrogative/past/perfect/interrogative-past-perfect'
+export * from './implementations/interrogative/past/perfect-continuous/interrogative-past-perfect-continuous'
