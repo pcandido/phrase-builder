@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.sass'
 import { Config, I, Subject, Verb } from '../model'
 import { ConfigInput } from '../components/config-input/ConfigInput'
 import { ComplementInput, SubjectInput, VerbInput } from '../components'
 import { PhraseOutput } from '../components/phrase-output/PhraseOutput'
+import { PhraseFactory } from '../model/phrase/phrase-factory'
 
 export const App = () => {
 
@@ -16,6 +17,14 @@ export const App = () => {
     verbTenseType: 'simple'
   })
 
+  const [phrase, setPhrase] = useState('')
+
+  useEffect(() => {
+    const phraseType = new PhraseFactory().make(config)
+    const phrase = phraseType.build(subject, verb, complement)
+    setPhrase(phrase)
+  }, [subject, verb, complement, config])
+
   return (
     <div className="App">
       <div id="parameters">
@@ -27,7 +36,7 @@ export const App = () => {
         </div>
       </div>
       <div id="result">
-        <PhraseOutput value={`${subject.getValue()} ${verb.getInfinitive()} ${complement}`} />
+        <PhraseOutput value={phrase} />
       </div>
     </div>
   )

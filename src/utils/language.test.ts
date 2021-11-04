@@ -1,4 +1,4 @@
-import { sillableCount } from './language'
+import { merge, sillableCount } from './language'
 
 describe('sillableCount', () => {
   it('should return 1 if word has just 1 vowel', () => {
@@ -21,5 +21,15 @@ describe('sillableCount', () => {
     expect(sillableCount('bake')).toBe(1)
     expect(sillableCount('dude')).toBe(1)
     expect(sillableCount('cube')).toBe(1)
+  })
+})
+
+describe('merge', () => {
+  it('should merge all elements of a phrase and add pontuation', () => {
+    expect(merge(['1', '2', '3'], '.')).toBe('1 2 3.')
+  })
+
+  it('should desconsidere empty strings without add extra space', () => {
+    expect(merge(['1', '', '2', '3'], '.')).toBe('1 2 3.')
   })
 })

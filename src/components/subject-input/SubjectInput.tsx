@@ -20,7 +20,7 @@ export const SubjectInput = (props: SubjectInputProps) => {
 
   const radioButtons = GENERIC_SUBJECTS
     .map(subject => {
-      const subjectValue = subject.getValue()
+      const subjectValue = subject.getRawValue()
       return (
         <div className="option" key={subjectValue}>
           <input
@@ -28,7 +28,7 @@ export const SubjectInput = (props: SubjectInputProps) => {
             name="subject"
             id={`radio-${subjectValue}`}
             value={subjectValue}
-            checked={value.getValue() === subjectValue}
+            checked={value.isGeneric() && value.getRawValue() === subjectValue}
             onChange={() => onChange(subject)}
           />
           <label htmlFor={`radio-${subjectValue}`}>{subjectValue}</label>

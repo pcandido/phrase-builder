@@ -19,7 +19,7 @@ describe('GenericSubject', () => {
 describe('Subject', () => {
   it('should return value on getValue', () => {
     const subject = new Subject('Name')
-    expect(subject.getValue()).toBe('Name')
+    expect(subject.getRawValue()).toBe('Name')
   })
 
   it('should return true for isThirdPerson for any non-generic Subject', () => {

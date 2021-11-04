@@ -2,8 +2,12 @@ export class Subject {
 
   constructor(private value: string) { }
 
-  getValue() {
+  getRawValue() {
     return this.value
+  }
+
+  getValue() {
+    return this.value || 'it'
   }
 
   isThirdPerson() {

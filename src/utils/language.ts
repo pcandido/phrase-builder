@@ -11,3 +11,7 @@ export function sillableCount(word: string): number {
 
   return vowelGroupsCount
 }
+
+export function merge(parts: string[], punctuation: '.' | '?'): string { 
+  return parts.filter(a => a).join(' ') + punctuation
+}

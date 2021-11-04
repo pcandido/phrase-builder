@@ -10,12 +10,12 @@ interface AuxiliarVerb {
 export const toBe: AuxiliarVerb = {
   infinitive: () => 'be',
   present: (subject: Subject) => {
-    if (subject.getValue() === I.getValue()) return 'am'
+    if (subject.getRawValue() === I.getRawValue()) return 'am'
     if (subject.isThirdPerson()) return 'is'
     return 'are'
   },
   past: (subject: Subject) => {
-    if (subject.getValue() === I.getValue()) return 'was'
+    if (subject.getRawValue() === I.getRawValue()) return 'was'
     if (subject.isThirdPerson()) return 'was'
     return 'were'
   },
