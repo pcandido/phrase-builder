@@ -17,3 +17,4 @@ export * from './implementations/negative/present/perfect-continuous/negative-pr
 export * from './implementations/negative/past/simple/negative-past-simple'
 export * from './implementations/negative/past/continuous/negative-past-continuous'
 export * from './implementations/negative/past/perfect/negative-past-perfect'
+export * from './implementations/negative/past/perfect-continuous/negative-past-perfect-continuous'

@@ -5,7 +5,7 @@ describe('AffirmativePastPerfectContinuous', () => {
   const study = new Verb('study')
   const english = 'English'
 
-  it('should return "I gad been studying English" for params (I, study, English)', () => {
+  it('should return "I had been studying English" for params (I, study, English)', () => {
     const phrase = new AffirmativePastPerfectContinuous().build(I, study, english)
     expect(phrase).toBe('I had been studying English.')
   })
