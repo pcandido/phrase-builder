@@ -7,7 +7,7 @@ import {
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
   AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous,
   NegativePresentSimple, NegativePresentContinuous, NegativePresentPerfect, NegativePresentPerfectContinuous,
-  NegativePastSimple, NegativePastContinuous, NegativePastPerfect, NegativePastPerfectContinuous, NegativeFutureSimple, NegativeFutureContinuous, NegativeFuturePerfect,
+  NegativePastSimple, NegativePastContinuous, NegativePastPerfect, NegativePastPerfectContinuous, NegativeFutureSimple, NegativeFutureContinuous, NegativeFuturePerfect, NegativeFuturePerfectContinuous,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -93,7 +93,7 @@ export class PhraseFactory {
       case 'simple': return new NegativeFutureSimple()
       case 'continuous': return new NegativeFutureContinuous()
       case 'perfect': return new NegativeFuturePerfect()
-      // case 'perfect continuous': return new NegativeFuturePerfectContinuous()
+      case 'perfect continuous': return new NegativeFuturePerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }

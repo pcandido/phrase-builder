@@ -21,3 +21,4 @@ export * from './implementations/negative/past/perfect-continuous/negative-past-
 export * from './implementations/negative/future/simple/negative-future-simple'
 export * from './implementations/negative/future/continuous/negative-future-continuous'
 export * from './implementations/negative/future/perfect/negative-future-perfect'
+export * from './implementations/negative/future/perfect-continuous/negative-future-perfect-continuous'
