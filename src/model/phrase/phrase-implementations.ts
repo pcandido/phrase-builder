@@ -8,3 +8,4 @@ export * from './implementations/affirmative/past/perfect/affirmative-past-perfe
 export * from './implementations/affirmative/past/perfect-continuous/affirmative-past-perfect-continuous'
 export * from './implementations/affirmative/future/simple/affirmative-future-simple'
 export * from './implementations/affirmative/future/continuous/affirmative-future-continuous'
+export * from './implementations/affirmative/future/perfect/affirmative-future-perfect'
