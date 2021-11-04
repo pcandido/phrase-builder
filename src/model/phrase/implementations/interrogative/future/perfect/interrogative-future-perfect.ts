@@ -13,7 +13,7 @@ export class InterrogativeFuturePerfect extends Phrase {
       toHave.infinitive(),
       verb.getPastParticiple(),
       complement,
-    ], '.')
+    ], '?')
   }
 
 }

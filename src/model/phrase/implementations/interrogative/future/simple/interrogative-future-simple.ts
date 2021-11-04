@@ -12,7 +12,7 @@ export class InterrogativeFutureSimple extends Phrase {
       subject.getValue(),
       verb.getInfinitive(),
       complement,
-    ], '.')
+    ], '?')
   }
 
 }

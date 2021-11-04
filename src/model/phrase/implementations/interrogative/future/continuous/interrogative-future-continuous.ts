@@ -13,7 +13,7 @@ export class InterrogativeFutureContinuous extends Phrase {
       toBe.infinitive(),
       verb.getContinuous(),
       complement,
-    ], '.')
+    ], '?')
   }
 
 }
