@@ -1,8 +1,8 @@
-import { Subject } from '../../../subject/subject'
-import { Verb } from '../../../verb/verb'
-import { Phrase } from '../../phrase'
-import { merge } from '../../../../utils/language'
-import { toBe } from '../../../verb/auxiliar-verbs'
+import { Subject } from '../../../../../subject/subject'
+import { Verb } from '../../../../../verb/verb'
+import { Phrase } from '../../../../phrase'
+import { merge } from '../../../../../../utils/language'
+import { toBe } from '../../../../../verb/auxiliar-verbs'
 
 export class AffirmativePresentContinuous extends Phrase {
 

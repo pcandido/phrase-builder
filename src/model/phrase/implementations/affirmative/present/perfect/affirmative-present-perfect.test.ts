@@ -1,4 +1,4 @@
-import { I, SHE, THEY, Verb } from '../../..'
+import { I, SHE, THEY, Verb } from '../../../../..'
 import { AffirmativePresentPerfect } from './affirmative-present-perfect'
 
 describe('AffirmativePresentSimple', () => {
