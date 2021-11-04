@@ -5,3 +5,4 @@ export * from './implementations/affirmative/present/perfect-continuous/affirmat
 export * from './implementations/affirmative/past/simple/affirmative-past-simple'
 export * from './implementations/affirmative/past/continuous/affirmative-past-continuous'
 export * from './implementations/affirmative/past/perfect/affirmative-past-perfect'
+export * from './implementations/affirmative/past/perfect-continuous/affirmative-past-perfect-continuous'
