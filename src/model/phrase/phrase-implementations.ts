@@ -26,3 +26,4 @@ export * from './implementations/interrogative/present/simple/interrogative-pres
 export * from './implementations/interrogative/present/continuous/interrogative-present-continuous'
 export * from './implementations/interrogative/present/perfect/interrogative-present-perfect'
 export * from './implementations/interrogative/present/perfect-continuous/interrogative-present-perfect-continuous'
+export * from './implementations/interrogative/past/simple/interrogative-past-simple'
