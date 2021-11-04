@@ -7,7 +7,9 @@ import {
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
   AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous,
   NegativePresentSimple, NegativePresentContinuous, NegativePresentPerfect, NegativePresentPerfectContinuous,
-  NegativePastSimple, NegativePastContinuous, NegativePastPerfect, NegativePastPerfectContinuous, NegativeFutureSimple, NegativeFutureContinuous, NegativeFuturePerfect, NegativeFuturePerfectContinuous,
+  NegativePastSimple, NegativePastContinuous, NegativePastPerfect, NegativePastPerfectContinuous,
+  NegativeFutureSimple, NegativeFutureContinuous, NegativeFuturePerfect, NegativeFuturePerfectContinuous,
+  InterrogativePresentSimple,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -16,6 +18,7 @@ export class PhraseFactory {
     switch (config.phraseType) {
       case 'affirmative': return this.makeAffirmativePhrase(config)
       case 'negative': return this.makeNegativePhrase(config)
+      case 'interrogative': return this.makeInterrogativePhrase(config)
       default: return new UnimplementedPhrase()
     }
   }
@@ -34,6 +37,15 @@ export class PhraseFactory {
       case 'present': return this.makeNegativePresentPhrase(config)
       case 'past': return this.makeNegativePastPhrase(config)
       case 'future': return this.makeNegativeFuturePhrase(config)
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeInterrogativePhrase(config: Config) {
+    switch (config.verbTenseTime) {
+      case 'present': return this.makeInterrogativePresentPhrase(config)
+      // case 'past': return this.makeInterrogativePastPhrase(config)
+      // case 'future': return this.makeInterrogativeFuturePhrase(config)
       default: return new UnimplementedPhrase()
     }
   }
@@ -94,6 +106,16 @@ export class PhraseFactory {
       case 'continuous': return new NegativeFutureContinuous()
       case 'perfect': return new NegativeFuturePerfect()
       case 'perfect continuous': return new NegativeFuturePerfectContinuous()
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeInterrogativePresentPhrase(config: Config) {
+    switch (config.verbTenseType) {
+      case 'simple': return new InterrogativePresentSimple()
+      // case 'continuous': return new InterrogativePresentContinuous()
+      // case 'perfect': return new InterrogativePresentPerfect()
+      // case 'perfect continuous': return new InterrogativePresentPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }
