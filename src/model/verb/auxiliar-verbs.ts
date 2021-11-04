@@ -35,3 +35,5 @@ export const toDo: AuxiliarVerb = {
   past: (subject: Subject) => 'did',
   pastParticiple: () => 'done',
 }
+
+export const will = 'will'

@@ -6,3 +6,4 @@ export * from './implementations/affirmative/past/simple/affirmative-past-simple
 export * from './implementations/affirmative/past/continuous/affirmative-past-continuous'
 export * from './implementations/affirmative/past/perfect/affirmative-past-perfect'
 export * from './implementations/affirmative/past/perfect-continuous/affirmative-past-perfect-continuous'
+export * from './implementations/affirmative/future/simple/affirmative-future-simple'

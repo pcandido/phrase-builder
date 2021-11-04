@@ -5,6 +5,7 @@ import { Verb } from '../verb/verb'
 import {
   AffirmativePresentSimple, AffirmativePresentContinuous, AffirmativePresentPerfect, AffirmativePresentPerfectContinuous,
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
+  AffirmativeFutureSimple,
 } from './phrase-implementations'
 
 class UnimplementedPhrase extends Phrase {
@@ -28,6 +29,7 @@ export class PhraseFactory {
     switch (config.verbTenseTime) {
       case 'present': return this.makeAffirmativePresentPhrase(config)
       case 'past': return this.makeAffirmativePastPhrase(config)
+      case 'future': return this.makeAffirmativeFuturePhrase(config)
       default: return new UnimplementedPhrase()
     }
   }
@@ -48,6 +50,16 @@ export class PhraseFactory {
       case 'continuous': return new AffirmativePastContinuous()
       case 'perfect': return new AffirmativePastPerfect()
       case 'perfect continuous': return new AffirmativePastPerfectContinuous()
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeAffirmativeFuturePhrase(config: Config) {
+    switch (config.verbTenseType) {
+      case 'simple': return new AffirmativeFutureSimple()
+      // case 'continuous': return new AffirmativeFutureContinuous()
+      // case 'perfect': return new AffirmativeFuturePerfect()
+      // case 'perfect continuous': return new AffirmativeFuturePerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }
