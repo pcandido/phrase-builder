@@ -9,3 +9,4 @@ export * from './implementations/affirmative/past/perfect-continuous/affirmative
 export * from './implementations/affirmative/future/simple/affirmative-future-simple'
 export * from './implementations/affirmative/future/continuous/affirmative-future-continuous'
 export * from './implementations/affirmative/future/perfect/affirmative-future-perfect'
+export * from './implementations/affirmative/future/perfect-continuous/affirmative-future-perfect-continuous'
