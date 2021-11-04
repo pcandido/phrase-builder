@@ -33,7 +33,6 @@ export const App = () => {
         <ComplementInput value={complement} onChange={setComplement} />
         <div id="config-input-card">
           <ConfigInput value={config} onChange={setConfig} />
-          {JSON.stringify(config)}
         </div>
       </div>
       <div id="result">

@@ -4,7 +4,8 @@
   padding: 15px
   display: flex
   flex-direction: column
-  
+  overflow-x: hidden
+
   #parameters
     display: grid
     gap: 15px
@@ -15,3 +16,11 @@
 
   #result
     flex-grow: 1
+    min-height: 300px
+
+  @media (max-width: 900px)
+    #parameters
+      grid-template-columns: 1fr
+
+      #config-input-card
+        grid-column: 1
