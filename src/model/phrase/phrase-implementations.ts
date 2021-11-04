@@ -24,3 +24,4 @@ export * from './implementations/negative/future/perfect/negative-future-perfect
 export * from './implementations/negative/future/perfect-continuous/negative-future-perfect-continuous'
 export * from './implementations/interrogative/present/simple/interrogative-present-simple'
 export * from './implementations/interrogative/present/continuous/interrogative-present-continuous'
+export * from './implementations/interrogative/present/perfect/interrogative-present-perfect'
