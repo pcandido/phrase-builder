@@ -16,52 +16,11 @@ export const ConfigInput = (props: ConfigProps) => {
   const [verbTenseTime, setVerbTenseTime] = useState<VerbTenseTime>(value.verbTenseTime)
   const [verbTenseType, setVerbTenseType] = useState<VerbTenseType>(value.verbTenseType)
 
-  useEffect(
-    () => onChange({ phraseType, verbTenseTime, verbTenseType }),
-    [phraseType, verbTenseTime, verbTenseType, onChange]
-  )
+  useEffect(() => onChange({ phraseType, verbTenseTime, verbTenseType }), [phraseType, verbTenseTime, verbTenseType, onChange])
 
-  const phraseTypeRadios = PHRASE_TYPES.map(type => (
-    <div key={type}>
-      <input
-        type="radio"
-        name="phrase-type"
-        id={`phrase-type-${type}`}
-        value={type}
-        checked={phraseType === type}
-        onChange={() => setPhraseType(type)}
-      />
-      <label htmlFor={`phrase-type-${type}`}>{type}</label>
-    </div>
-  ))
-
-  const verbTenseTimeRadios = VERB_TENSE_TIMES.map(time => (
-    <div key={time}>
-      <input
-        type="radio"
-        name="verb-tense-time"
-        id={`verb-tense-time-${time}`}
-        value={time}
-        checked={verbTenseTime === time}
-        onChange={() => setVerbTenseTime(time)}
-      />
-      <label htmlFor={`verb-tense-time-${time}`}>{time}</label>
-    </div>
-  ))
-
-  const verbTenseTypeRadios = VERB_TENSE_TYPES.map(type => (
-    <div key={type}>
-      <input
-        type="radio"
-        name="verb-tense-type"
-        id={`verb-tense-type-${type}`}
-        value={type}
-        checked={verbTenseType === type}
-        onChange={() => setVerbTenseType(type)}
-      />
-      <label htmlFor={`verb-tense-type-${type}`}>{type}</label>
-    </div>
-  ))
+  const phraseTypeRadios = PHRASE_TYPES.map(type => makeInput('phrase-type', type, phraseType, setPhraseType))
+  const verbTenseTimeRadios = VERB_TENSE_TIMES.map(time => makeInput('verb-tense-time', time, verbTenseTime, setVerbTenseTime))
+  const verbTenseTypeRadios = VERB_TENSE_TYPES.map(type => makeInput('verb-tense-type', type, verbTenseType, setVerbTenseType))
 
   return (
     <Card title="Configuration">
@@ -71,5 +30,21 @@ export const ConfigInput = (props: ConfigProps) => {
         <div className="block"><div className="title">Verb Tense Type</div>{verbTenseTypeRadios}</div>
       </div>
     </Card>
+  )
+}
+
+function makeInput(name: string, value: string, state: string, setState: (value: string) => void) {
+  return (
+    <div key={value}>
+      <input
+        type="radio"
+        name={name}
+        id={`${name}-${value}`}
+        value={value}
+        checked={state === value}
+        onChange={() => setState(value)}
+      />
+      <label htmlFor={`${name}-${value}`}>{value}</label>
+    </div>
   )
 }
