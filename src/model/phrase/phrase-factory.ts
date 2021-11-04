@@ -10,7 +10,8 @@ import {
   NegativePastSimple, NegativePastContinuous, NegativePastPerfect, NegativePastPerfectContinuous,
   NegativeFutureSimple, NegativeFutureContinuous, NegativeFuturePerfect, NegativeFuturePerfectContinuous,
   InterrogativePresentSimple, InterrogativePresentContinuous, InterrogativePresentPerfect, InterrogativePresentPerfectContinuous,
-  InterrogativePastSimple, InterrogativePastContinuous, InterrogativePastPerfect, InterrogativePastPerfectContinuous, InterrogativeFutureSimple,
+  InterrogativePastSimple, InterrogativePastContinuous, InterrogativePastPerfect, InterrogativePastPerfectContinuous,
+  InterrogativeFutureSimple, InterrogativeFutureContinuous,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -134,7 +135,7 @@ export class PhraseFactory {
   private makeInterrogativeFuturePhrase(config: Config) {
     switch (config.verbTenseType) {
       case 'simple': return new InterrogativeFutureSimple()
-      // case 'continuous': return new InterrogativeFutureContinuous()
+      case 'continuous': return new InterrogativeFutureContinuous()
       // case 'perfect': return new InterrogativeFuturePerfect()
       // case 'perfect continuous': return new InterrogativeFuturePerfectContinuous()
       default: return new UnimplementedPhrase()
