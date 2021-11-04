@@ -21,7 +21,9 @@ export const App = () => {
         <SubjectInput value={subject} onChange={setSubject} />
         <VerbInput value={verb} onChange={setVerb} />
         <ComplementInput value={complement} onChange={setComplement} />
-        <ConfigInput value={config} onChange={setConfig} />
+        <div id="config-input-card">
+          <ConfigInput value={config} onChange={setConfig} />
+        </div>
       </div>
       <div id="result">
         <h1>{subject.getValue()} {verb} {complement}</h1>

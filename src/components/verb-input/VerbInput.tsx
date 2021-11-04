@@ -1,3 +1,4 @@
+import { Card } from '../card/Card'
 import './VerbInput.sass'
 
 export interface VerbInputProps {
@@ -15,14 +16,13 @@ export const VerbInput = (props: VerbInputProps) => {
   ))
 
   return (
-    <div id="verb-input" className="card">
-      <div className="card-title">Verb</div>
-      <div className="card-content">
+    <Card title="Verb">
+      <div id="verb-input">
         <input value={props.value} onChange={event => props.onChange(event.target.value)}></input>
         <div id="common-verbs">
           {commonVerbButtons}
         </div>
       </div>
-    </div>
+    </Card>
   )
 }

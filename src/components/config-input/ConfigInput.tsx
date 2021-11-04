@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Config, PhraseType, PHRASE_TYPES, VerbTenseTime, VerbTenseType, VERB_TENSE_TIMES, VERB_TENSE_TYPES } from '../../model'
+import { Card } from '../card/Card'
+import './ConfigInput.sass'
 
 export interface ConfigProps {
   value: Config
@@ -62,13 +64,12 @@ export const ConfigInput = (props: ConfigProps) => {
   ))
 
   return (
-    <div className="card">
-      <div className="card-title">Configuration</div>
-      <div className="card-content">
-        <div>{phraseTypeRadios}</div>
-        <div>{verbTenseTimeRadios}</div>
-        <div>{verbTenseTypeRadios}</div>
+    <Card title="Configuration">
+      <div id="config-input">
+        <div className="block"><div className="title">Phrase Type</div>{phraseTypeRadios}</div>
+        <div className="block"><div className="title">Verb Tense Time</div>{verbTenseTimeRadios}</div>
+        <div className="block"><div className="title">Verb Tense Type</div>{verbTenseTypeRadios}</div>
       </div>
-    </div>
+    </Card>
   )
 }

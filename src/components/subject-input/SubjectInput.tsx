@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './SubjectInput.sass'
 import { GENERIC_SUBJECTS, Subject } from '../../model'
+import { Card } from '../card/Card'
 
 export interface SubjectInputProps {
   value: Subject
@@ -36,9 +37,8 @@ export const SubjectInput = (props: SubjectInputProps) => {
     })
 
   return (
-    <div id="subject-input" className="card">
-      <div className="card-title">Subject</div>
-      <div className="card-content">
+    <Card title="Subject">
+      <div id="subject-input">
         {radioButtons}
         <div className="option">
           <input
@@ -53,7 +53,7 @@ export const SubjectInput = (props: SubjectInputProps) => {
           <input id="other-input" type="text" value={otherSubject} onChange={event => setOtherSubject(event.target.value)} />
         </div>
       </div>
-    </div>
+    </Card>
   )
 
 }

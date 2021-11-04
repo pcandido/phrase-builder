@@ -1,3 +1,4 @@
+import { Card } from '../card/Card'
 import './ComplementInput.sass'
 
 export interface ComplementInputProps {
@@ -7,11 +8,10 @@ export interface ComplementInputProps {
 
 export const ComplementInput = (props: ComplementInputProps) => {
   return (
-    <div id="complement-input" className="card">
-      <div className="card-title">Complement</div>
-      <div className="card-content">
+    <Card title="Complement">
+      <div id="complement-input">
         <input type="text" value={props.value} onChange={event => props.onChange(event.target.value)} />
       </div>
-    </div>
+    </Card>
   )
 }
