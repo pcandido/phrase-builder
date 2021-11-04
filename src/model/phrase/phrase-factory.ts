@@ -7,7 +7,7 @@ import {
   AffirmativePastSimple, AffirmativePastContinuous, AffirmativePastPerfect, AffirmativePastPerfectContinuous,
   AffirmativeFutureSimple, AffirmativeFutureContinuous, AffirmativeFuturePerfect, AffirmativeFuturePerfectContinuous,
   NegativePresentSimple, NegativePresentContinuous, NegativePresentPerfect, NegativePresentPerfectContinuous,
-  NegativePastSimple, NegativePastContinuous,
+  NegativePastSimple, NegativePastContinuous, NegativePastPerfect,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -82,7 +82,7 @@ export class PhraseFactory {
     switch (config.verbTenseType) {
       case 'simple': return new NegativePastSimple()
       case 'continuous': return new NegativePastContinuous()
-      // case 'perfect': return new NegativePastPerfect()
+      case 'perfect': return new NegativePastPerfect()
       // case 'perfect continuous': return new NegativePastPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
