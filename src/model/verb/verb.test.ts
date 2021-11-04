@@ -82,6 +82,10 @@ describe('Verb', () => {
       expect(new Verb('go').getContinuous()).toBe('going')
       expect(new Verb('read').getContinuous()).toBe('reading')
     })
+
+    it('should append ing to "be", which is an exception to rule', () => {
+      expect(new Verb('be').getContinuous()).toBe('being')
+    })
   })
 
   describe('getPast', () => {

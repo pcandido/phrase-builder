@@ -38,6 +38,9 @@ export class Verb {
   }
 
   getContinuous(): string {
+    if(this.value === 'be')
+      return 'being'
+
     const endsWithConsonantPlusE = new RegExp(`[${CONSONANTS.join('')}]e$`)
     if (this.value.match(endsWithConsonantPlusE))
       return this.value.slice(0, -1) + 'ing'
