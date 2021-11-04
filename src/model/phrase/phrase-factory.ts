@@ -12,6 +12,7 @@ import {
   InterrogativePresentSimple,
   InterrogativePresentContinuous,
   InterrogativePresentPerfect,
+  InterrogativePresentPerfectContinuous,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -117,7 +118,7 @@ export class PhraseFactory {
       case 'simple': return new InterrogativePresentSimple()
       case 'continuous': return new InterrogativePresentContinuous()
       case 'perfect': return new InterrogativePresentPerfect()
-      // case 'perfect continuous': return new InterrogativePresentPerfectContinuous()
+      case 'perfect continuous': return new InterrogativePresentPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }
