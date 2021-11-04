@@ -1,11 +1,41 @@
 import { Config } from '..'
 import { Phrase } from './phrase'
-import { AffirmativePresentSimple } from './implementations/affirmative-present-simple/affirmative-present-simple'
+import { Subject } from '../subject/subject'
+import { Verb } from '../verb/verb'
+import { AffirmativePresentContinuous, AffirmativePresentSimple } from './phrase-implementations'
+
+class UnimplementedPhrase extends Phrase {
+
+  protected assembly(subject: Subject, verb: Verb, complement: string): string {
+    return 'Unimplemented phrase type'
+  }
+
+}
 
 export class PhraseFactory {
 
   make(config: Config): Phrase {
-    return new AffirmativePresentSimple()
+    switch (config.phraseType) {
+      case 'affirmative': return this.makeAffirmativePhrase(config)
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeAffirmativePhrase(config: Config) {
+    switch (config.verbTenseTime) {
+      case 'present': return this.makeAffirmativePresentPhrase(config)
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeAffirmativePresentPhrase(config: Config) {
+    switch (config.verbTenseType) {
+      case 'simple': return new AffirmativePresentSimple()
+      case 'continuous': return new AffirmativePresentContinuous()
+      default: return new UnimplementedPhrase()
+    }
   }
 
 }
+
+
