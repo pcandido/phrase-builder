@@ -9,7 +9,7 @@ export class AffirmativePresentSimple extends Phrase {
     return merge([
       subject.getValue(),
       verb.getPresentSimple(subject),
-      complement
+      complement,
     ], '.')
   }
 

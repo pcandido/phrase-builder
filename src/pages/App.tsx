@@ -14,7 +14,7 @@ export const App = () => {
   const [config, setConfig] = useState<Config>({
     phraseType: 'affirmative',
     verbTenseTime: 'present',
-    verbTenseType: 'simple'
+    verbTenseType: 'simple',
   })
 
   const [phrase, setPhrase] = useState('')

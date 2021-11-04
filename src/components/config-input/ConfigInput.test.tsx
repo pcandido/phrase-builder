@@ -7,7 +7,7 @@ const makeSut = (defaults?: Partial<Config>) => {
     phraseType: 'affirmative',
     verbTenseTime: 'present',
     verbTenseType: 'simple',
-    ...defaults
+    ...defaults,
   }
   const onChange = jest.fn()
   render(<ConfigInput value={value} onChange={onChange} />)

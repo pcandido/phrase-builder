@@ -15,7 +15,7 @@ describe('Card', () => {
     render(
       <Card title="any title">
         <input type="text" />
-      </Card>
+      </Card>,
     )
 
     const content = screen.getByRole('textbox')
