@@ -1,10 +1,17 @@
-#parameters
-  display: grid
-  gap: 15px
-  grid-template-columns: 1fr 1fr 1fr
+.App
+  width: 100vw
+  height: 100vh
+  padding: 15px
+  display: flex
+  flex-direction: column
+  
+  #parameters
+    display: grid
+    gap: 15px
+    grid-template-columns: 1fr 1fr 1fr
 
-  #config-input-card
-    grid-column: 1 / 4
+    #config-input-card
+      grid-column: 1 / 4
 
-#result
-  background: green
+  #result
+    flex-grow: 1

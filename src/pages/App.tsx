@@ -3,6 +3,7 @@ import './App.sass'
 import { Config, I, Subject } from '../model'
 import { ConfigInput } from '../components/config-input/ConfigInput'
 import { ComplementInput, SubjectInput, VerbInput } from '../components'
+import { Phrase } from '../components/phrase/Phrase'
 
 export const App = () => {
 
@@ -26,8 +27,7 @@ export const App = () => {
         </div>
       </div>
       <div id="result">
-        <h1>{subject.getValue()} {verb} {complement}</h1>
-        {JSON.stringify(config)}
+        <Phrase value={`${subject.getValue()} ${verb} ${complement}`} />
       </div>
     </div>
   )
