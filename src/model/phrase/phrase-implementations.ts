@@ -42,3 +42,4 @@ export * from './implementations/negative-interrogative/past/simple/negative-int
 export * from './implementations/negative-interrogative/past/continuous/negative-interrogative-past-continuous'
 export * from './implementations/negative-interrogative/past/perfect/negative-interrogative-past-perfect'
 export * from './implementations/negative-interrogative/past/perfect-continuous/negative-interrogative-past-perfect-continuous'
+export * from './implementations/negative-interrogative/future/simple/negative-interrogative-future-simple'
