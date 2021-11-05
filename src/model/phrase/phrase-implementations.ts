@@ -38,3 +38,4 @@ export * from './implementations/negative-interrogative/present/simple/negative-
 export * from './implementations/negative-interrogative/present/continuous/negative-interrogative-present-continuous'
 export * from './implementations/negative-interrogative/present/perfect/negative-interrogative-present-perfect'
 export * from './implementations/negative-interrogative/present/perfect-continuous/negative-interrogative-present-perfect-continuous'
+export * from './implementations/negative-interrogative/past/simple/negative-interrogative-past-simple'

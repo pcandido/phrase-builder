@@ -12,7 +12,7 @@ import {
   InterrogativePresentSimple, InterrogativePresentContinuous, InterrogativePresentPerfect, InterrogativePresentPerfectContinuous,
   InterrogativePastSimple, InterrogativePastContinuous, InterrogativePastPerfect, InterrogativePastPerfectContinuous,
   InterrogativeFutureSimple, InterrogativeFutureContinuous, InterrogativeFuturePerfect, InterrogativeFuturePerfectContinuous,
-  NegativeInterrogativePresentSimple, NegativeInterrogativePresentContinuous, NegativeInterrogativePresentPerfect, NegativeInterrogativePresentPerfectContinuous,
+  NegativeInterrogativePresentSimple, NegativeInterrogativePresentContinuous, NegativeInterrogativePresentPerfect, NegativeInterrogativePresentPerfectContinuous, NegativeInterrogativePastSimple,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -57,7 +57,7 @@ export class PhraseFactory {
   private makeNegativeInterrogativePhrase(config: Config) {
     switch (config.verbTenseTime) {
       case 'present': return this.makeNegativeInterrogativePresentPhrase(config)
-      // case 'past': return this.makeNegativeInterrogativePastPhrase(config)
+      case 'past': return this.makeNegativeInterrogativePastPhrase(config)
       // case 'future': return this.makeNegativeInterrogativeFuturePhrase(config)
       default: return new UnimplementedPhrase()
     }
@@ -159,6 +159,16 @@ export class PhraseFactory {
       case 'continuous': return new NegativeInterrogativePresentContinuous()
       case 'perfect': return new NegativeInterrogativePresentPerfect()
       case 'perfect continuous': return new NegativeInterrogativePresentPerfectContinuous()
+      default: return new UnimplementedPhrase()
+    }
+  }
+
+  private makeNegativeInterrogativePastPhrase(config: Config) {
+    switch (config.verbTenseType) {
+      case 'simple': return new NegativeInterrogativePastSimple()
+      // case 'continuous': return new NegativeInterrogativePastContinuous()
+      // case 'perfect': return new NegativeInterrogativePastPerfect()
+      // case 'perfect continuous': return new NegativeInterrogativePastPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }
