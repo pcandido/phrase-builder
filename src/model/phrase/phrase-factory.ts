@@ -12,7 +12,7 @@ import {
   InterrogativePresentSimple, InterrogativePresentContinuous, InterrogativePresentPerfect, InterrogativePresentPerfectContinuous,
   InterrogativePastSimple, InterrogativePastContinuous, InterrogativePastPerfect, InterrogativePastPerfectContinuous,
   InterrogativeFutureSimple, InterrogativeFutureContinuous, InterrogativeFuturePerfect, InterrogativeFuturePerfectContinuous,
-  NegativeInterrogativePresentSimple, NegativeInterrogativePresentContinuous, NegativeInterrogativePresentPerfect,
+  NegativeInterrogativePresentSimple, NegativeInterrogativePresentContinuous, NegativeInterrogativePresentPerfect, NegativeInterrogativePresentPerfectContinuous,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -158,7 +158,7 @@ export class PhraseFactory {
       case 'simple': return new NegativeInterrogativePresentSimple()
       case 'continuous': return new NegativeInterrogativePresentContinuous()
       case 'perfect': return new NegativeInterrogativePresentPerfect()
-      // case 'perfect continuous': return new NegativeInterrogativePresentPerfectContinuous()
+      case 'perfect continuous': return new NegativeInterrogativePresentPerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }
