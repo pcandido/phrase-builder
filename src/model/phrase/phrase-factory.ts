@@ -12,7 +12,9 @@ import {
   InterrogativePresentSimple, InterrogativePresentContinuous, InterrogativePresentPerfect, InterrogativePresentPerfectContinuous,
   InterrogativePastSimple, InterrogativePastContinuous, InterrogativePastPerfect, InterrogativePastPerfectContinuous,
   InterrogativeFutureSimple, InterrogativeFutureContinuous, InterrogativeFuturePerfect, InterrogativeFuturePerfectContinuous,
-  NegativeInterrogativePresentSimple, NegativeInterrogativePresentContinuous, NegativeInterrogativePresentPerfect, NegativeInterrogativePresentPerfectContinuous, NegativeInterrogativePastSimple, NegativeInterrogativePastContinuous, NegativeInterrogativePastPerfect, NegativeInterrogativePastPerfectContinuous, NegativeInterrogativeFutureSimple, NegativeInterrogativeFutureContinuous, NegativeInterrogativeFuturePerfect,
+  NegativeInterrogativePresentSimple, NegativeInterrogativePresentContinuous, NegativeInterrogativePresentPerfect, NegativeInterrogativePresentPerfectContinuous,
+  NegativeInterrogativePastSimple, NegativeInterrogativePastContinuous, NegativeInterrogativePastPerfect, NegativeInterrogativePastPerfectContinuous,
+  NegativeInterrogativeFutureSimple, NegativeInterrogativeFutureContinuous, NegativeInterrogativeFuturePerfect, NegativeInterrogativeFuturePerfectContinuous,
 } from './phrase-implementations'
 
 export class PhraseFactory {
@@ -178,7 +180,7 @@ export class PhraseFactory {
       case 'simple': return new NegativeInterrogativeFutureSimple()
       case 'continuous': return new NegativeInterrogativeFutureContinuous()
       case 'perfect': return new NegativeInterrogativeFuturePerfect()
-      // case 'perfect continuous': return new NegativeInterrogativeFuturePerfectContinuous()
+      case 'perfect continuous': return new NegativeInterrogativeFuturePerfectContinuous()
       default: return new UnimplementedPhrase()
     }
   }
