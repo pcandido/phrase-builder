@@ -1,5 +1,7 @@
 # phrase-builder
 
+![Demo](docs/demo.gif)
+
 This project aims to automate verb conjugation and phrase construction. Users enter the subject, verb, and complement, and can choose the phrase type and verb tense. Finally, the built phrase is shown to users.
 
 My intention in creating this project was to train my React and English skills.
